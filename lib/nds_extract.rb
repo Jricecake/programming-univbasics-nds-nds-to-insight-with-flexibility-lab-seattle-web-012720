@@ -68,17 +68,19 @@ end
 
 
 def gross_per_studio(collection)
+  
   i = 0
-  total_studio_grosses = []
+  total_studio_grosses = {}
 
   while i < collection.length do
     current_studio = collection[i][:studio]
     current_gross = collection[i][:worldwide_gross]
-    binding.pry
+
     if !total_studio_grosses[current_studio]
       total_studio_grosses[current_studio] = current_gross
-    else total_studio_grosses[current_studio] += current_gross
-
+    else 
+      total_studio_grosses[current_studio] += current_gross
+#binding.pry
     end
     i += 1
 end
@@ -100,12 +102,17 @@ end
 def movies_with_directors_set(source)
   director_set = []
   i = 0
-  #binding.pry
+
   while i < source.length do
-    director = source[i][:name]
-    director_set[i] = {director => :movies}
+    director_combo = []
+    director_name = source[i][:name]
+    current_movies = source[i][:movies]
+    #director_combo[director_name] = current_movies
+    director_set << movies_with_director_key(director_name, current_movies)  
+binding.pry
     i += 1
   end  
+director_set
   # GOAL: For each director, find their :movies Array and stick it in a new Array
   #
   # INPUT:
