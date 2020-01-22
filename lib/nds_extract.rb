@@ -75,12 +75,27 @@ def gross_per_studio(collection)
   while i < collection.length do
     current_studio = collection[i][:studio]
     current_gross = collection[i][:worldwide_gross]
+<<<<<<< HEAD
 
     if !total_studio_grosses[current_studio]
       total_studio_grosses[current_studio] = current_gross
     else 
       total_studio_grosses[current_studio] += current_gross
 #binding.pry
+=======
+<<<<<<< HEAD
+    binding.pry
+    if !total_studio_grosses[current_studio]
+      total_studio_grosses[current_studio] = current_gross
+    else total_studio_grosses[current_studio] += current_gross
+
+=======
+
+    if !total_studio_grosses[current_studio]
+      total_studio_grosses[current_studio] = current_gross
+    else total_studio_grosses[current_studio] += current_gross
+>>>>>>> afcf5a9229972f076d9523c925083ab9a010a99c
+>>>>>>> d1e0002c44f23946b27ffbd498dfd1b73ed91d5e
     end
     i += 1
 end
